@@ -1,4 +1,4 @@
-[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README_.md>)
+[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README_eng.md>)
 
 ## Table of Contents
 
