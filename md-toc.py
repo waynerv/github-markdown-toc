@@ -33,8 +33,11 @@ def generate_toc(file_object, start_level=1, end_level=6):
             if match:
                 heading_level = len(match.group(1))
 
-                if heading_level < start_level or heading_level > end_level:
+                # 跳过不在指定标题级别范围内的标题
+                if heading_level < start_level:
                     continue
+                if heading_level > end_level:
+                    break
 
                 # 删除标题文本中的HTML tag
                 heading_title = regex_tag.sub('', match.group(2))
@@ -83,11 +86,13 @@ def main():
     parser.add_argument('-o', '--output', action='store_true', help='print toc to stdout instead of writing to file')
     args = parser.parse_args()
 
+    # 获取命令行参数
     start_level = args.start
     end_level = args.end
     if start_level > end_level:
         sys.exit('command option is illegal: start level must less than or equal to end level.')
     filenames = args.filenames
+
     if args.output:
         write_flag = False
     else:
