@@ -1,4 +1,7 @@
+[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README_.md>)
+
 ## 目录
+
   - [md-toc](#md-toc)
   - [安装](#安装)
   - [使用](#使用)
@@ -88,11 +91,11 @@ Table of contents generated.
 
 原文件示例：
 
-- [File_without_TOC.md]()
+- [File_without_TOC.md](https://github.com/waynerv/github-markdown-toc/blob/master/examples/File_without_TOC.md)
 
 自动生成目录并写入到文件后：
 
-- [File_with_TOC.md]()
+- [File_with_TOC.md](https://github.com/waynerv/github-markdown-toc/blob/master/examples/File_with_TOC.md)
 
 ### 配置
 
