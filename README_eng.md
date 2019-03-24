@@ -1,6 +1,6 @@
 [中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README_eng.md>)
 
-## Table of Contents
+# Table of Contents
 
   - [Table of Contents](#table-of-contents)
   - [md-toc](#md-toc)
@@ -13,7 +13,7 @@
       - [Write results to a file or print to standard output](#write-results-to-a-file-or-print-to-standard-output)
   - [Dependency](#dependency)
 
-## md-toc
+# md-toc
 
 Easy and customizable way to **generate TOC** for README.md on GitHub.
 
@@ -27,7 +27,7 @@ Easy and customizable way to **generate TOC** for README.md on GitHub.
 
 If you don't want to download any files or read the command instructions below, you can try my online build tool.
 
-## Installation
+# Installation
 
 **Linux**
 
@@ -41,7 +41,7 @@ You can also directly download the file `md-toc.py` in the root directory of the
 
 Not tested yet.
 
-## Usage
+# Usage
 
 The command syntax is as follows：
 
@@ -57,7 +57,7 @@ $ python3 md-toc.py -h
 
 Note: Make sure your device has successfully installed Python3 before run it.
 
-### Single file
+## Single file
 
 Automatically generate **TOC** for a single markdown file and print result to standard output with only 2-4 title levels:
 
@@ -81,7 +81,7 @@ Table of contents generated.
 
 Then copy/paste result between prompt sentence from console into original README.md.
 
-### Multiple files
+## Multiple files
 
 Use the default configuration to generate **TOC** for multiple markdown files and write them to a file separately:
 
@@ -98,9 +98,9 @@ After generating **TOC** and writing to the file：
 
 - [File_with_TOC.md](https://github.com/waynerv/github-markdown-toc/blob/master/examples/File_with_TOC.md)
 
-### Configuration
+## Configuration
 
-#### customize  the title level
+### customize  the title level
 
 Use the command line options `-s` or `--start` and add parameters to set the start header level of **TOC**. The default value of the parameter is 1.
 
@@ -156,7 +156,7 @@ Generate from file: examples/Mastering_Markdown.md
 Table of contents generated.
 ```
 
-#### Write results to a file or print to standard output
+### Write results to a file or print to standard output
 
 By default, the program automatically writes the generated **TOC** to the beginning of the original file.
 
@@ -172,7 +172,7 @@ Use the `>` on the command line to export the generated directory to a separate 
 $ python3 md-toc.py -o README.md > table_of_content.md
 ```
 
-## Dependency
+# Dependency
 
 - Python3
 

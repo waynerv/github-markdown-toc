@@ -1,6 +1,6 @@
 [中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README_eng.md>)
 
-## 目录
+# 目录
 
   - [md-toc](#md-toc)
   - [安装](#安装)
@@ -12,7 +12,7 @@
       - [将结果写入到文件或打印到标准输出](#将结果写入到文件或打印到标准输出)
   - [环境依赖](#环境依赖)
 
-## md-toc
+# md-toc
 
 简单且可自定义的方式为 Github Markdown 文件自动生成目录。
 
@@ -26,7 +26,7 @@
 
 如果你不想下载任何文件或者阅读下面的命令说明，可以尝试一下我的在线生成工具。
 
-## 安装
+# 安装
 
 **Linux**
 
@@ -40,7 +40,7 @@ $ wget https://raw.githubusercontent.com/waynerv/github-markdown-toc/master/md-t
 
 没有设备，暂未测试。
 
-## 使用
+# 使用
 
 命令格式如下：
 
@@ -56,7 +56,7 @@ $ python3 md-toc.py -h
 
 注意：使用前请确保你的设备已经成功安装了 Python3。
 
-### 单个文件
+单个文件
 
 为单个 markdown 文件自动生成目录并打印到标准输出，目录中仅包含2-4级标题：
 
@@ -80,7 +80,7 @@ Table of contents generated.
 
 然后将命令提示语句之间的结果从终端复制粘贴到原来的 README.md 文件中。
 
-### 多个文件
+## 多个文件
 
 使用默认配置为多个md文件自动生成目录并分别写入到文件中：
 
@@ -97,9 +97,9 @@ Table of contents generated.
 
 - [File_with_TOC.md](https://github.com/waynerv/github-markdown-toc/blob/master/examples/File_with_TOC.md)
 
-### 配置
+## 配置
 
-#### 自定义目录的标题级别
+### 自定义目录的标题级别
 
 使用命令行选项 `-s` 或 `--start` 并添加参数即可设置生成目录的起始标题级别，参数默认值为1。
 
@@ -155,7 +155,7 @@ Generate from file: examples/Mastering_Markdown.md
 Table of contents generated.
 ```
 
-#### 将结果写入到文件或打印到标准输出
+### 将结果写入到文件或打印到标准输出
 
 默认情况下程序会将生成的目录自动写入到原文件的开头。
 
@@ -171,7 +171,7 @@ Table of contents generated.
 $ python3 md-toc.py -o README.md > table_of_content.md
 ```
 
-## 环境依赖
+# 环境依赖
 
 - Python3
 
