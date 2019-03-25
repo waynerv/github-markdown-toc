@@ -1,8 +1,10 @@
+# gfm-toc
+
 [中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README_CHS.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>)
 
-# Table of Contents
+## Table of Contents
 
-  - [gfm-toc](#gfm-toc)
+  - [Overview](#overview)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Single file](#single-file)
@@ -13,7 +15,7 @@
       - [Add a title to the generated TOC](#add-a-title-to-the-generated-toc)
   - [Dependency](#dependency)
 
-# gfm-toc
+## Overview
 
 Easy and customizable way to **generate TOC** for README.md on GitHub.
 
@@ -27,42 +29,50 @@ Easy and customizable way to **generate TOC** for README.md on GitHub.
 
 If you don't want to download any files or read the command instructions below, you can try my online build tool.
 
-# Installation
+## Installation
 
-**Linux**
+**Pypi**
 
+```bash
+$ pip3 install gfm-toc --upgrade
 ```
-$ wget https://raw.githubusercontent.com/waynerv/github-markdown-toc/master/md-toc.py
+
+**Manually**
+
+```bash
+$ git clone https://github.com/waynerv/github-markdown-toc
+$ cd github-markdown-toc
+$ python3 setup.py install
 ```
 
-You can also directly download the file `md-toc.py` in the root directory of the repository or copy the contents of the file to a local file with the same name.
-
-**OSX or Windows**
-
-Not tested yet.
-
-# Usage
-
-The command syntax is as follows：
+You can also directly download the file `gfm_toc/md_toc.py` in the repository and run this script manually like this:
 
 ```bash
 $ python3 md-toc.py [-h] [-s {1,2,3,4,5,6}] [-e {1,2,3,4,5,6}] [-o] file [file ...]
 ```
 
+## Usage
+
+The command syntax is as follows：
+
+```bash
+$ gfm-toc [-h] [-s {1,2,3,4,5,6}] [-e {1,2,3,4,5,6}] [-o] file [file ...]
+```
+
 Run the command as follows to get help information for the command options（you can replace `-h` with `--help`).:
 
 ```bash
-$ python3 md-toc.py -h
+$ gfm-toc -h
 ```
 
 Note: Make sure your device has successfully installed Python3 before run it.
 
-## Single file
+### Single file
 
 Automatically generate **TOC** for a single markdown file and print result to standard output with only 2-4 title levels:
 
 ```bash
-$ python3 md-toc.py -s 2 -e 4 -o README_eng.md
+$ gfm-toc -s 2 -e 4 -o README_eng.md
 Generate from file: README_eng.md
 
 - [Table of Contents](#table-of-contents)
@@ -81,12 +91,12 @@ Table of contents generated.
 
 Then copy/paste result between prompt sentence from console into original README.md.
 
-## Multiple files
+### Multiple files
 
 Use the default configuration to generate **TOC** for multiple markdown files and write them to a file separately:
 
 ```bash
-$ python3 md-toc.py file01.md file02.md file03.md
+$ gfm-toc file01.md file02.md file03.md
 Table of contents generated.
 ```
 
@@ -98,9 +108,9 @@ After generating **TOC** and writing to the file：
 
 - [File_with_TOC.md](https://github.com/waynerv/github-markdown-toc/blob/master/examples/File_with_TOC.md)
 
-## Configuration
+### Configuration
 
-### customize  the title level
+#### customize  the title level
 
 Use the command line options `-s` or `--start` and add parameters to set the start header level of **TOC**. The default value of the parameter is 1.
 
@@ -116,7 +126,7 @@ The title level parameter must be an integer between 1 and 6, and the start titl
 Generate **TOC** of 1-6 title levels (default option):
 
 ```bash
-$ python3 md-toc.py test/Mastering_Markdown.md -o
+$ gfm-toc test/Mastering_Markdown.md -o
 Generate from file: test/Mastering_Markdown.md
 
 - [Mastering Markdown](#mastering-markdown)
@@ -139,7 +149,7 @@ Table of contents generated.
 Only generate 2-3 title levels:
 
 ```bash
-$ python3 md-toc.py examples/Mastering_Markdown.md -o -s 2 -e 3
+$ gfm-toc examples/Mastering_Markdown.md -o -s 2 -e 3
 Generate from file: examples/Mastering_Markdown.md
 
 - [What is Markdown?](#what-is-markdown)
@@ -156,7 +166,7 @@ Generate from file: examples/Mastering_Markdown.md
 Table of contents generated.
 ```
 
-### Write results to a file or print to standard output
+#### Write results to a file or print to standard output
 
 By default, the program automatically writes the generated **TOC** to the beginning of the original file.
 
@@ -169,15 +179,15 @@ Add the option `-o` or `--output` when you want to print the results to standard
 Use the `>` on the command line to export the generated directory to a separate file:
 
 ```bash
-$ python3 md-toc.py -o README.md > table_of_content.md
+$ gfm-toc -o README.md > table_of_content.md
 ```
 
-### Add a title to the generated TOC
+#### Add a title to the generated TOC
 
 This option is not very common, because in many cases, people write Markdown documents according to different specifications or their own habits. But if you need, you can add `-t` or `--title` options when executing commands. This will add a level 2 title called `Table of contens` to the generated **TOC**, as follows:
 
 ```bash
-$ python3 md-toc.py examples/Mastering_Markdown.md -o -s 2 -e 3 -t
+$ gfm-toc examples/Mastering_Markdown.md -o -s 2 -e 3 -t
 Generate from file: examples/Mastering_Markdown.md
 
 ## Table of contents
@@ -196,7 +206,7 @@ Generate from file: examples/Mastering_Markdown.md
 Table of contents generated.
 ```
 
-# Dependency
+## Dependency
 
 - Python3
 
