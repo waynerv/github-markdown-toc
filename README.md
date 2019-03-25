@@ -2,7 +2,7 @@
 
 # Table of Contents
 
-  - [md-toc](#md-toc)
+  - [gfm-toc](#gfm-toc)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Single file](#single-file)
@@ -13,7 +13,7 @@
       - [Add a title to the generated TOC](#add-a-title-to-the-generated-toc)
   - [Dependency](#dependency)
 
-# md-toc
+# gfm-toc
 
 Easy and customizable way to **generate TOC** for README.md on GitHub.
 
