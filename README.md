@@ -1,32 +1,33 @@
-[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README_eng.md>)
+[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md_CHS>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>)
 
-# 目录
+# Table of Contents
 
+  - [Table of Contents](#table-of-contents)
   - [md-toc](#md-toc)
-  - [安装](#安装)
-  - [使用](#使用)
-    - [单个文件](#单个文件)
-    - [多个文件](#多个文件)
-    - [配置](#配置)
-      - [自定义目录的标题级别](#自定义目录的标题级别)
-      - [将结果写入到文件或打印到标准输出](#将结果写入到文件或打印到标准输出)
-  - [环境依赖](#环境依赖)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Single file](#single-file)
+    - [Multiple files](#multiple-files)
+    - [Configuration](#configuration)
+      - [customize  the title level](#customize--the-title-level)
+      - [Write results to a file or print to standard output](#write-results-to-a-file-or-print-to-standard-output)
+  - [Dependency](#dependency)
 
 # md-toc
 
-简单且可自定义的方式为 Github Markdown 文件自动生成目录。
+Easy and customizable way to **generate TOC** for README.md on GitHub.
 
-- 遵照 Github Favored Markdown 格式自动生成目录
-- 单个.py文件即可运行，无其他依赖
-- 支持中文与英文语言的文本内容
-- 支持自定义生成目录的标题级别
-- 支持自动将结果写入文件，也可打印结果到标准输出自行处理
-- 支持同时为多个文件生成目录
-- 支持重复标题、过滤代码块中的标题
+- Automatically generate table of contents in accordance with Github Favored Markdown format
+- Just a single .py file can be done with no other dependencies
+- Support for text content in both Chinese and English languages
+- Support for customizing the title level of the table of contents
+- Supports automatic write results to files, and also can print results to standard output for further processing
+- Supports generating table of contents for multiple files at the same time
+- Support for repeating headers, filtering headers in code blocks
 
-如果你不想下载任何文件或者阅读下面的命令说明，可以尝试一下我的在线生成工具。
+If you don't want to download any files or read the command instructions below, you can try my online build tool.
 
-# 安装
+# Installation
 
 **Linux**
 
@@ -34,85 +35,85 @@
 $ wget https://raw.githubusercontent.com/waynerv/github-markdown-toc/master/md-toc.py
 ```
 
-也可直接下载仓库根目录中的`md-toc.py`文件或将该文件的内容复制到本地的同名文件中。
+You can also directly download the file `md-toc.py` in the root directory of the repository or copy the contents of the file to a local file with the same name.
 
 **OSX or Windows**
 
-没有设备，暂未测试。
+Not tested yet.
 
-# 使用
+# Usage
 
-命令格式如下：
+The command syntax is as follows：
 
 ```bash
 $ python3 md-toc.py [-h] [-s {1,2,3,4,5,6}] [-e {1,2,3,4,5,6}] [-o] file [file ...]
 ```
 
-以如下方式运行命令可获取命令选项的帮助信息（可将`-h`替换成`--help`）：
+Run the command as follows to get help information for the command options（you can replace `-h` with `--help`).:
 
 ```bash
 $ python3 md-toc.py -h
 ```
 
-注意：使用前请确保你的设备已经成功安装了 Python3。
+Note: Make sure your device has successfully installed Python3 before run it.
 
-## 单个文件
+## Single file
 
-为单个 markdown 文件自动生成目录并打印到标准输出，目录中仅包含2-4级标题：
+Automatically generate **TOC** for a single markdown file and print result to standard output with only 2-4 title levels:
 
 ```bash
-$ python3 md-toc.py -s 2 -e 4 -o README.md
-Generate from file: README.md
+$ python3 md-toc.py -s 2 -e 4 -o README_eng.md
+Generate from file: README_eng.md
 
-- [目录](#目录)
+- [Table of Contents](#table-of-contents)
 - [md-toc](#md-toc)
-- [安装](#安装)
-- [使用](#使用)
-  - [单个文件](#单个文件)
-  - [多个文件](#多个文件)
-  - [配置](#配置)
-    - [自定义目录的标题级别](#自定义目录的标题级别)
-    - [将结果写入到文件或打印到标准输出](#将结果写入到文件或打印到标准输出)
-- [环境依赖](#环境依赖)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Single file](#single-file)
+  - [Multiple files](#multiple-files)
+  - [Configuration](#configuration)
+    - [customize  the title level](#customize--the-title-level)
+    - [Write results to a file or print to standard output](#write-results-to-a-file-or-print-to-standard-output)
+- [Dependency](#dependency)
 
 Table of contents generated.
 ```
 
-然后将命令提示语句之间的结果从终端复制粘贴到原来的 README.md 文件中。
+Then copy/paste result between prompt sentence from console into original README.md.
 
-## 多个文件
+## Multiple files
 
-使用默认配置为多个md文件自动生成目录并分别写入到文件中：
+Use the default configuration to generate **TOC** for multiple markdown files and write them to a file separately:
 
 ```bash
 $ python3 md-toc.py file01.md file02.md file03.md
 Table of contents generated.
 ```
 
-原文件示例：
+here's an example：
 
 - [File_without_TOC.md](https://github.com/waynerv/github-markdown-toc/blob/master/examples/File_without_TOC.md)
 
-自动生成目录并写入到文件后：
+After generating **TOC** and writing to the file：
 
 - [File_with_TOC.md](https://github.com/waynerv/github-markdown-toc/blob/master/examples/File_with_TOC.md)
 
-## 配置
+## Configuration
 
-### 自定义目录的标题级别
+### customize  the title level
 
-使用命令行选项 `-s` 或 `--start` 并添加参数即可设置生成目录的起始标题级别，参数默认值为1。
+Use the command line options `-s` or `--start` and add parameters to set the start header level of **TOC**. The default value of the parameter is 1.
 
-使用命令行选项 `-e` 或 `--end` 并添加参数即可设置生成目录的结束标题级别，参数默认值为6。
+Use the command line options `-e` or `--end` and add parameters to set the end header level of **TOC**. The default value of the parameter is 6.
 
-标题级别参数必须是1到6之间的整数，且起始标题级别不能大于结束标题级别。
+The title level parameter must be an integer between 1 and 6, and the start title level cannot be greater than the end title level.
 
 ```bash
 -s {1,2,3,4,5,6}, --start {1,2,3,4,5,6}  choose the start level of TOC, default value is 1
 -e {1,2,3,4,5,6}, --end {1,2,3,4,5,6}  choose the end level of TOC, default value is 6
 ```
 
-生成1-6级标题的目录（默认选项）：
+Generate **TOC** of 1-6 title levels (default option):
 
 ```bash
 $ python3 md-toc.py test/Mastering_Markdown.md -o
@@ -135,7 +136,7 @@ Generate from file: test/Mastering_Markdown.md
 Table of contents generated.
 ```
 
-只生成2-3级标题的目录：
+Only generate 2-3 title levels:
 
 ```bash
 $ python3 md-toc.py examples/Mastering_Markdown.md -o -s 2 -e 3
@@ -155,24 +156,48 @@ Generate from file: examples/Mastering_Markdown.md
 Table of contents generated.
 ```
 
-### 将结果写入到文件或打印到标准输出
+### Write results to a file or print to standard output
 
-默认情况下程序会将生成的目录自动写入到原文件的开头。
+By default, the program automatically writes the generated **TOC** to the beginning of the original file.
 
-在使用时添加选项`-o`或`--output` 即可将结果直接打印到标准输出供复制或进行其他处理。
+Add the option `-o` or `--output` when you want to print the results to standard output for copying or other processing.
 
 ```bash
 -o, --output          print toc to stdout instead of writing to file
 ```
 
-在命令行中使用 `>` 重定向数据流即可将生成的目录输出到单独的文件中：
+Use the `>` on the command line to export the generated directory to a separate file:
 
 ```bash
 $ python3 md-toc.py -o README.md > table_of_content.md
 ```
 
-# 环境依赖
+### Add a title to the generated TOC
+
+This option is not very common, because in many cases, people write Markdown documents according to different specifications or their own habits. But if you need, you can add `-t` or `--title` options when executing commands. This will add a level 2 title called `Table of contens` to the generated **TOC**, as follows:
+
+```bash
+$ python3 md-toc.py examples/Mastering_Markdown.md -o -s 2 -e 3 -t
+Generate from file: examples/Mastering_Markdown.md
+
+## Table of contents
+
+- [What is Markdown?](#what-is-markdown)
+- [Examples](#examples)
+- [Syntax guide](#syntax-guide)
+  - [Headers](#headers)
+  - [Emphasis](#emphasis)
+  - [Lists](#lists)
+  - [Images](#images)
+  - [Links](#links)
+  - [Blockquotes](#blockquotes)
+  - [Inline code](#inline-code)
+
+Table of contents generated.
+```
+
+# Dependency
 
 - Python3
 
-在 Ubuntu 18.04 python 3.6 环境使用 bash 终端进行过测试。
+Tested on Ubuntu 18.04 in bash with Python 3.6.7.
