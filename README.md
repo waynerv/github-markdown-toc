@@ -1,8 +1,7 @@
-[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md_CHS>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>)
+[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README_CHS.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>)
 
 # Table of Contents
 
-  - [Table of Contents](#table-of-contents)
   - [md-toc](#md-toc)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -11,6 +10,7 @@
     - [Configuration](#configuration)
       - [customize  the title level](#customize--the-title-level)
       - [Write results to a file or print to standard output](#write-results-to-a-file-or-print-to-standard-output)
+      - [Add a title to the generated TOC](#add-a-title-to-the-generated-toc)
   - [Dependency](#dependency)
 
 # md-toc
