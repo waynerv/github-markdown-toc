@@ -34,10 +34,8 @@ def generate_toc(file_object, start_level=1, end_level=6):
                 heading_level = len(match.group(1))
 
                 # 跳过不在指定标题级别范围内的标题
-                if heading_level < start_level:
+                if heading_level < start_level or heading_level > end_level:
                     continue
-                if heading_level > end_level:
-                    break
 
                 # 删除标题文本中的HTML tag
                 heading_title = regex_tag.sub('', match.group(2))
