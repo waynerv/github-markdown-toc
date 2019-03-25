@@ -1,6 +1,6 @@
 # gfm-toc
 
-[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README_CHS.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>)
+[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README_CHS.md>) | [README](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>)
 
 ## 目录
 
@@ -48,7 +48,7 @@ $ python3 setup.py install
 也可直接下载仓库目录中的`gfm_toc/md_toc.py`文件并像下面这样手动运行脚本：
 
 ```bash
-$ python3 md-toc.py [-h] [-s {1,2,3,4,5,6}] [-e {1,2,3,4,5,6}] [-o] file [file ...]
+$ python3 md_toc.py [-h] [-s {1,2,3,4,5,6}] [-e {1,2,3,4,5,6}] [-o] file [file ...]
 ```
 
 ## 使用
@@ -85,6 +85,7 @@ Generate from file: README.md
     - [自定义目录的标题级别](#自定义目录的标题级别)
     - [将结果写入到文件或打印到标准输出](#将结果写入到文件或打印到标准输出)
 - [环境依赖](#环境依赖)
+- [版权许可](#版权许可)
 
 Table of contents generated.
 ```
@@ -211,3 +212,7 @@ Table of contents generated.
 - Python3
 
 在 Ubuntu 18.04 python 3.6 环境使用 bash 终端进行过测试。
+
+## 版权许可
+
+MIT

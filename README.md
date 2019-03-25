@@ -1,6 +1,6 @@
 # gfm-toc
 
-[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README_CHS.md>) | [Readme](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>)
+[中文文档](<https://github.com/waynerv/github-markdown-toc/blob/master/README_CHS.md>) | [README](<https://github.com/waynerv/github-markdown-toc/blob/master/README.md>)
 
 ## Table of Contents
 
@@ -14,6 +14,7 @@
       - [Write results to a file or print to standard output](#write-results-to-a-file-or-print-to-standard-output)
       - [Add a title to the generated TOC](#add-a-title-to-the-generated-toc)
   - [Dependency](#dependency)
+  - [License](#license)
 
 ## Overview
 
@@ -211,3 +212,7 @@ Table of contents generated.
 - Python3
 
 Tested on Ubuntu 18.04 in bash with Python 3.6.7.
+
+## License
+
+MIT

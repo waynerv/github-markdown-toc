@@ -87,6 +87,8 @@ def handler(filenames, start_level, end_level, write_flag=True, title_flag=False
 
 
 def main():
+    # Add command line arguments
+    # 配置命令行参数
     parser = argparse.ArgumentParser()
     parser.add_argument('filenames', metavar='file', nargs='+', help='file or files to generate TOC')
     parser.add_argument('-s', '--start', type=int, choices=[1, 2, 3, 4, 5, 6], default=1,
