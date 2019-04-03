@@ -25,7 +25,7 @@ def generate_toc(file_object, start_level=1, end_level=6):
                 block_flag = False
             else:
                 block_flag = True
-        # If the text is in the code block, skip the title matching and subsequent processing of the line text.
+        # If the text is in the code block, skip the header matching and subsequent processing of that line.
         # 若文本在代码块内，则跳过该行文本的标题匹配与后续处理
         if block_flag:
             continue
@@ -35,36 +35,36 @@ def generate_toc(file_object, start_level=1, end_level=6):
             match = regex_title.search(process_line)
 
             if match:
-                heading_level = len(match.group(1))
+                header_level = len(match.group(1))
 
-                # Skip headers that are not within the specified heading level
+                # Skip headers that are not within the specified header level
                 # 跳过不在指定标题级别范围内的标题
-                if heading_level < start_level or heading_level > end_level:
+                if header_level < start_level or header_level > end_level:
                     continue
 
                 # Delete the HTML tag in the text
-                # 删除标题文本中的HTML tag
-                heading_title = regex_tag.sub('', match.group(2))
-                # Generate heading anchor, convert text to lowercase, and remove spaces or extra symbols from text
+                # 删除标题文本中的HTML标签
+                header_text = regex_tag.sub('', match.group(2))
+                # Generate header anchor, convert text to lowercase, and remove spaces or extra symbols from text
                 # 生成锚点，将标题文本转换为小写，并删除标题文本中的空格与多余符号
-                heading_anchor = regex_char.sub('', (heading_title.lower()))
-                heading_anchor = regex_space.sub('-', heading_anchor)
+                header_anchor = regex_char.sub('', (header_text.lower()))
+                header_anchor = regex_space.sub('-', header_anchor)
 
                 # Refer to the GFM specification to process the same heading anchor
                 # 参照GFM规范，对转换后文本相同的标题锚点进行处理
-                if heading_anchor not in anchor_tracker:
-                    anchor_tracker[heading_anchor] = 0
+                if header_anchor not in anchor_tracker:
+                    anchor_tracker[header_anchor] = 0
                 else:
-                    anchor_tracker[heading_anchor] += 1
-                    heading_anchor = heading_anchor + '-' + str(anchor_tracker[heading_anchor])
+                    anchor_tracker[header_anchor] += 1
+                    header_anchor = header_anchor + '-' + str(anchor_tracker[header_anchor])
 
                 # Indented space multiple of the output result
                 # 输出结果的缩进空格倍数
-                indents = heading_level - start_level
+                indents = header_level - start_level
 
                 # Output the formatted TOC entry, such as: - [Use FlaskForm-Migrate](#use-flaskform-migrate)
                 # 输出格式化后的目录条目，如：- [Use FlaskForm-Migrate](#use-flaskform-migrate)
-                output_md += " " * (indents * 2) + "- [" + heading_title + "](#" + heading_anchor + ")\n"
+                output_md += " " * (indents * 2) + "- [" + header_text + "](#" + header_anchor + ")\n"
 
     return output_md
 
@@ -92,11 +92,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('filenames', metavar='file', nargs='+', help='file or files to generate TOC')
     parser.add_argument('-s', '--start', type=int, choices=[1, 2, 3, 4, 5, 6], default=1,
-                        help='choose the start level of TOC, default value is 1')
+                        help='choose the start header level of TOC, default value is 1')
     parser.add_argument('-e', '--end', type=int, choices=[1, 2, 3, 4, 5, 6], default=6,
-                        help='choose the end level of TOC, default value is 6')
+                        help='choose the end header level of TOC, default value is 6')
     parser.add_argument('-o', '--output', action='store_true', help='print toc to stdout instead of writing to file')
-    parser.add_argument('-t', '--title', action='store_true', help='add a level 2 title to the generated TOC')
+    parser.add_argument('-t', '--title', action='store_true', help='add a level 2 header to the generated TOC')
     args = parser.parse_args()
 
     # Get command line arguments

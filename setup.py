@@ -16,12 +16,12 @@ with open("README.md", "r") as fh:
 
 setup(
     name='gfm-toc',
-    version='0.0.5',
+    version='0.0.6',
     url='https://github.com/waynerv/github-markdown-toc',
     license='MIT',
     author='Xie Wei',
     author_email='ampedee@gmail.com',
-    description='Simple and customizable way to generate TOC for github markdown files.',
+    description='Simple and customizable way to generate TOC for Github Markdown files.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords='markdown md github gfm table of contents toc',

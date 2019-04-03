@@ -4,13 +4,14 @@
 
 ## Table of Contents
 
+  - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Single file](#single-file)
     - [Multiple files](#multiple-files)
     - [Configuration](#configuration)
-      - [customize  the title level](#customize--the-title-level)
+      - [customize the header level](#customize-the-header-level)
       - [Write results to a file or print to standard output](#write-results-to-a-file-or-print-to-standard-output)
       - [Add a title to the generated TOC](#add-a-title-to-the-generated-toc)
   - [Dependency](#dependency)
@@ -23,7 +24,7 @@ Easy and customizable way to **generate TOC** for README.md on GitHub.
 - Automatically generate table of contents in accordance with Github Favored Markdown format
 - Just a single .py file can be done with no other dependencies
 - Support for text content in both Chinese and English languages
-- Support for customizing the title level of the table of contents
+- Support for customizing the header level of the table of contents
 - Supports automatic write results to files, and also can print results to standard output for further processing
 - Supports generating table of contents for multiple files at the same time
 - Support for repeating headers, filtering headers in code blocks
@@ -111,20 +112,20 @@ After generating **TOC** and writing to the file：
 
 ### Configuration
 
-#### customize  the title level
+#### customize the header level
 
 Use the command line options `-s` or `--start` and add parameters to set the start header level of **TOC**. The default value of the parameter is 1.
 
 Use the command line options `-e` or `--end` and add parameters to set the end header level of **TOC**. The default value of the parameter is 6.
 
-The title level parameter must be an integer between 1 and 6, and the start title level cannot be greater than the end title level.
+The title level parameter must be an integer between 1 and 6, and the start header level cannot be greater than the end header level.
 
 ```bash
 -s {1,2,3,4,5,6}, --start {1,2,3,4,5,6}  choose the start level of TOC, default value is 1
 -e {1,2,3,4,5,6}, --end {1,2,3,4,5,6}  choose the end level of TOC, default value is 6
 ```
 
-Generate **TOC** of 1-6 title levels (default option):
+Generate **TOC** of 1-6 header levels (default option):
 
 ```bash
 $ gfm-toc test/Mastering_Markdown.md -o
@@ -147,7 +148,7 @@ Generate from file: test/Mastering_Markdown.md
 Table of contents generated.
 ```
 
-Only generate 2-3 title levels:
+Only generate 2-3 header levels:
 
 ```bash
 $ gfm-toc examples/Mastering_Markdown.md -o -s 2 -e 3
@@ -185,7 +186,7 @@ $ gfm-toc -o README.md > table_of_content.md
 
 #### Add a title to the generated TOC
 
-This option is not very common, because in many cases, people write Markdown documents according to different specifications or their own habits. But if you need, you can add `-t` or `--title` options when executing commands. This will add a level 2 title called `Table of contens` to the generated **TOC**, as follows:
+This option is not very common, because in many cases, people write Markdown documents according to different specifications or their own habits. But if you need, you can add `-t` or `--title` options when executing commands. This will add a level 2 header called `Table of contens` to the generated **TOC**, as follows:
 
 ```bash
 $ gfm-toc examples/Mastering_Markdown.md -o -s 2 -e 3 -t
