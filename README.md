@@ -4,7 +4,6 @@
 
 ## Table of Contents
 
-  - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -102,7 +101,7 @@ $ gfm-toc file01.md file02.md file03.md
 Table of contents generated.
 ```
 
-here's an example：
+Here's an example：
 
 - [File_without_TOC.md](https://github.com/waynerv/github-markdown-toc/blob/master/examples/File_without_TOC.md)
 

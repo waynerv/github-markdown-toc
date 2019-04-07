@@ -16,7 +16,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='gfm-toc',
-    version='0.0.6',
+    version='0.0.7',
     url='https://github.com/waynerv/github-markdown-toc',
     license='MIT',
     author='Xie Wei',
